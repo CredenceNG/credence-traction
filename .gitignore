@@ -1,0 +1,14 @@
+__pycache__
+devops/helm/charts/traction/charts/**
+**/.env
+.DS_Store
+
+traction-venv
+./services/tenant-ui/config/local.json
+
+.vscode/settings.json
+**/.venv
+plugins/poetry.lock
+
+.idea
+**/.idea

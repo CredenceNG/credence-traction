@@ -15,24 +15,24 @@
       "countdownSeconds": "30"
     },
     "oidc": {
-      "active": false,
-      "authority": "https://dev.loginproxy.gov.bc.ca/auth/realms/digitaltrust-citz",
-      "client": "innkeeper-frontend",
-      "label": "IDIR",
+      "active": true,
+      "authority": "https://manager.credence.ng/auth/realms/credence_realm",
+      "client": "credence_app",
+      "label": "Credence",
       "extraQueryParams": {}
     },
     "ux": {
-      "appTitle": "Traction Tenant Console",
-      "appInnkeeperTitle": "Traction Innkeeper Console",
-      "sidebarTitle": "TRACTION",
+      "appTitle": "Credence Tenant Console",
+      "appInnkeeperTitle": "Credence Innkeeper Console",
+      "sidebarTitle": "Credence",
       "copyright": "",
       "owner": "",
-      "coverImageCopyright": "Photo by Kristoffer Fredriksson on StockSnap",
+      "coverImageCopyright": "Photo by Credence",
       "aboutBusiness": {
-        "title": "Government of British Columbia",
-        "linkTitle": "BC Digital Trust Service Agreement",
+        "title": "Credence",
+        "linkTitle": "Credence Service Agreement",
         "link": "https://github.com/bcgov/bc-vcpedia/blob/main/agents/bc-gov-agent-service.md",
-        "imageUrl": "/img/bc/bc_logo.png"
+        "imageUrl": "/img/logo/logo6.png"
       },
       "infoBanner": {
         "message": "",
@@ -64,8 +64,8 @@
       "key": "change-me"
     },
     "smtp": {
-      "server": "apps.smtp.gov.bc.ca",
-      "port": 25,
+      "server": "http://localhost:1080",
+      "port": 1025,
       "secure": false,
       "user": "",
       "password": "",

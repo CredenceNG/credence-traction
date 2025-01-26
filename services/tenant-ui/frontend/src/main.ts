@@ -5,6 +5,14 @@ import App from './App.vue';
 import { createPinia } from 'pinia';
 import { useConfigStore } from './store/configStore';
 
+import Ripple from 'primevue/ripple';
+
+// import App from './App.vue'
+// import router from './router'
+
+// const app = createApp(App)
+//app.directive('ripple', Ripple);
+
 /*
   UI framework PrimeVue
   https://www.primefaces.org/primevue/
@@ -26,6 +34,7 @@ import i18n from '@/plugins/i18n/i18n';
 async function loadApp() {
   // 1. create app
   const app = createApp(App);
+  app.directive('ripple', Ripple); //to correct vue errors
   // 2. load storage
   const pinia = createPinia();
   app.use(pinia);

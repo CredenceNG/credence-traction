@@ -17,6 +17,7 @@ const oidcMiddleware = async (
 ) => {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    console.log("Inside the OIDC Middleware")
     res.status(401).json({ message: "Unauthorized" });
     return;
   }

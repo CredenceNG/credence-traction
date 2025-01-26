@@ -78,11 +78,14 @@ export const useReservationStore = defineStore('reservation', () => {
     }
 
     if (reservation.value?.reservation_pwd) {
-      // Auto-approve is on, just check-in for them
-      checkIn(
-        reservation.value.reservation_id,
-        reservation.value.reservation_pwd
-      );
+     // Auto-approve is on, just check-in for them
+     // if (!config.value.frontend.showOIDCReservationLogin) {
+        console.log("Inside .. checkin")
+        checkIn(
+          reservation.value.reservation_id,
+          reservation.value.reservation_pwd
+        );
+      //}
     } else {
       // Send the user the reservation ID and details about waiting for the innkeeper to approve
       const trimUrl = window.location.origin;
@@ -130,6 +133,7 @@ export const useReservationStore = defineStore('reservation', () => {
           } else {
             reservation.value = res.data;
             status.value = res.data.state;
+
           }
         }
       })
@@ -165,6 +169,7 @@ export const useReservationStore = defineStore('reservation', () => {
       })
       .then((res) => {
         // A successful check in, set the status and display the returned wallet key and ID
+        console.log('check in successfull');
         status.value = RESERVATION_STATUSES.SHOW_WALLET;
         walletId.value = res.data.wallet_id;
         walletKey.value = res.data.wallet_key;

@@ -9,9 +9,9 @@ const config = {
     oidc: {
       active: false,
       authority:
-        'https://dev.loginproxy.gov.bc.ca/auth/realms/digitaltrust-citz',
+        'https://manager.credence.ng',
       client: 'innkeeper-frontend',
-      label: 'IDIR',
+      label: 'CREDA',
     },
     ux: {
       appTitle: 'Credence Tenant Console',

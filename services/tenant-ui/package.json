@@ -20,10 +20,15 @@
     "connect-history-api-fallback": "^2.0.0",
     "cors": "^2.8.5",
     "eta": "^3.5.0",
-    "express": "^4.21.1",
+    "express": "^4.21.2",
     "express-validator": "^7.2.0",
+    "har-validator": "^5.1.5",
+    "hashi-vault-js": "^0.4.16",
+    "install": "^0.13.0",
     "jose": "^5.9.6",
-    "nodemailer": "^6.9.16"
+    "nodemailer": "^6.9.16",
+    "npm": "^11.0.0",
+    "typescript-nedb-orm": "^1.7.0"
   },
   "devDependencies": {
     "@types/config": "^3.3.5",

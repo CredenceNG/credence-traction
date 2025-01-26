@@ -1,5 +1,5 @@
 <template>
-  <Button class="w-full mt-5" label="IDIR" :loading="loading" @click="login" />
+  <Button class="w-full mt-5" label="OneLogin" :loading="loading" @click="login" />
   <!-- eslint-disable-next-line @intlify/vue-i18n/no-raw-text -->
   <div v-if="error">{{ $t('admin.error') }}: {{ error }}</div>
 </template>

@@ -2,20 +2,28 @@ import config from "config";
 import cors from "cors";
 import express from "express";
 import path from "path";
-
+import axios, { AxiosError } from "axios";
 import { router } from "./routes/router";
 
+import { IID, ORM } from 'typescript-nedb-orm'
 const PORT: number = parseInt(config.get("server.port") as string, 10);
 const APIROOT: string = config.get("server.apiPath");
 const STATIC_FILES_PATH: string = config.get("server.staticFiles");
 
 import history from "connect-history-api-fallback";
 
+// const app = express();
+// app.use(history());
+// app.use(cors());
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+
+
 const app = express();
-app.use(history());
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(history());
 
 
 // Host the static frontend assets
@@ -36,18 +44,17 @@ function _setupConfig() {
   };
 }
 
-// Frontend configuration endpoint, return config section at /config so UI can get it
 app.use("/config", (_, res, next) => {
   try {
     res.status(200).json(_setupConfig());
   } catch (err) {
     next(err);
   }
-});
+})
 
 // This service's api endpoints
 app.use(APIROOT, router);
 
-app.listen(PORT, () => {
+app.listen(PORT, () => {  
   console.log(`Listening on port ${PORT}, apiroot: ${APIROOT}`);
 });

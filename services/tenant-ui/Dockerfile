@@ -4,7 +4,7 @@ COPY . .
 # install backend libs
 RUN npm cache clean --force && npm ci
 # install frontend libs
-RUN cd frontend && npm cache clean --force && npm ci
+RUN cd frontend && npm cache clean --force && npm i && npm ci
 # build backend
 RUN npm run build
 # build frontend

@@ -18,6 +18,12 @@ export const API_PATH = {
   OIDC_INNKEEPER_LOGIN: '/api/innkeeperLogin',
   OIDC_INNKEEPER_RESERVATION: '/innkeeperReservation',
 
+   // Test Login - backend link
+   OIDC_LOGIN: '/api/login',
+   BACKEND_LOGIN: '/api/backendlogin',
+   OIDC_RESERVATION: '/reservation',
+   UPDATE_RESERVE: '/api/update',
+
   // Acapy and Plugins
   BASICMESSAGES: '/basicmessages',
   BASICMESSAGES_SEND: (connId: string) => `/connections/${connId}/send-message`,

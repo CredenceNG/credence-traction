@@ -55,7 +55,7 @@ kubectl delete secret,pvc --selector "app.kubernetes.io/instance"=my-release
 | Name               | Description                                                                                                                                            | Value              |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
 | `nameOverride`     | String to override the helm chart name, second part of the prefix                                                                                      | '""'               |
-| `fullnameOverride` | String to fully override the helm chart name, full prefix. ***Must be set when using a custom release name that does not include the word traction.*** | '""'               |
+| `fullnameOverride` | String to fully override the helm chart name, full prefix. **_Must be set when using a custom release name that does not include the word traction._** | '""'               |
 | `ingressSuffix`    | Domain suffix to be used for default hostpaths in ingress                                                                                              | `-dev.example.com` |
 
 ### Acapy Configuration
@@ -145,10 +145,10 @@ kubectl delete secret,pvc --selector "app.kubernetes.io/instance"=my-release
 
 ### Multitenancy Configuration
 
-| Name                                            | Description                                                                                                                                                                                                                    | Value                       |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------- |
-| `acapy.multitenancyConfiguration.json`          | json with config. Overrides all other values including subchart values. e.g.: '{"wallet_type":"single-wallet-askar", "wallet_name":"askar-wallet"}'                                                                            | `""`                        |
-| `acapy.multitenancyConfiguration.wallet_type`   | The multitenant wallet type.                                                                                                                                                                                                   | `single-wallet-askar`       |
+| Name                                          | Description                                                                                                                                         | Value                 |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| `acapy.multitenancyConfiguration.json`        | json with config. Overrides all other values including subchart values. e.g.: '{"wallet_type":"single-wallet-askar", "wallet_name":"askar-wallet"}' | `""`                  |
+| `acapy.multitenancyConfiguration.wallet_type` | The multitenant wallet type.                                                                                                                        | `single-wallet-askar` |
 
 ### Acapy Plugins
 

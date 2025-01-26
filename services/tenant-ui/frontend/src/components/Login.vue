@@ -14,12 +14,7 @@
         <!-- Logging In -->
         <div v-if="loginMode === LOGIN_MODE.SIGNIN" class="pt-6">
           <LoginForm />
-          <div
-            v-if="
-              stringOrBooleanTruthy(config.frontend.showOIDCReservationLogin)
-            "
-            class="oidc-login"
-          >
+          <div v-if="stringOrBooleanTruthy(config.frontend.showOIDCReservationLogin)" class="oidc-login">
             <hr />
             <div v-if="!user" class="oidc-choice">
               <span class="mb-0">{{ $t('admin.orRequestAccessWith') }}</span>
@@ -27,61 +22,37 @@
             </div>
           </div>
 
-          <div
-            v-if="
-              user ||
-              !stringOrBooleanTruthy(config.frontend.showOIDCReservationLogin)
-            "
-            class="mt-6"
-          >
+          <div v-if="user || !stringOrBooleanTruthy(config.frontend.showOIDCReservationLogin)" class="mt-6">
             <p>
               {{ $t('login.noAccount') }}
-              <a
-                href="#"
-                class="p-button-link login-mode"
-                @click.prevent="loginMode = LOGIN_MODE.RESERVE"
-                >{{ $t('login.createRequest') }}</a
-              >
+              <a href="#" class="p-button-link login-mode" @click.prevent="loginMode = LOGIN_MODE.RESERVE">{{
+                $t('login.createRequest') }}</a>
             </p>
 
             <p>
               {{ $t('login.submittedRequest') }}
-              <a
-                href="#"
-                class="p-button-link login-mode"
-                @click.prevent="loginMode = LOGIN_MODE.STATUS"
-                >{{ $t('login.checkStatus') }}</a
-              >
+              <a href="#" class="p-button-link login-mode" @click.prevent="loginMode = LOGIN_MODE.STATUS">{{
+                $t('login.checkStatus') }}</a>
             </p>
           </div>
         </div>
 
         <!-- Making Reservation -->
         <div v-else-if="loginMode === LOGIN_MODE.RESERVE" class="pt-6 pb-4">
-          <Button
-            :label="$t('login.backToSignIn')"
-            icon="pi pi-arrow-left"
-            class="p-button-text"
-            @click="goBack($event)"
-          />
+          <Button :label="$t('login.backToSignIn')" icon="pi pi-arrow-left" class="p-button-text"
+            @click="goBack($event)" />
           <Reserve />
         </div>
 
         <!-- Checking Status -->
         <div v-else-if="loginMode === LOGIN_MODE.STATUS" class="pt-6 pb-4">
-          <Button
-            :label="$t('login.backToSignIn')"
-            icon="pi pi-arrow-left"
-            class="p-button-text"
-            @click="goBack($event)"
-          />
+          <Button :label="$t('login.backToSignIn')" icon="pi pi-arrow-left" class="p-button-text"
+            @click="goBack($event)" />
           <Status />
         </div>
 
         <!-- Show OIDC user if logged in -->
-        <div
-          v-if="stringOrBooleanTruthy(config.frontend.showOIDCReservationLogin)"
-        >
+        <div v-if="stringOrBooleanTruthy(config.frontend.showOIDCReservationLogin)">
           <div class="flex justify-content-end mt-4">
             <OidcUserDisplayVue />
           </div>

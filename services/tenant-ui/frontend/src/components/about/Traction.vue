@@ -58,9 +58,7 @@
     </div>
     <div class="col-10">
       <!-- eslint-disable-next-line @intlify/vue-i18n/no-raw-text -->
-      <a href="https://github.com/bcgov/traction" target="_blank">
-        https://github.com/bcgov/traction
-      </a>
+      <a href="https://github.com/credenceng/traction" target="_blank">CredenceNG</a>
     </div>
   </div>
 </template>

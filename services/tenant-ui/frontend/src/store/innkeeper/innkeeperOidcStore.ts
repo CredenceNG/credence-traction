@@ -17,6 +17,7 @@ export const useInnkeeperOidcStore = defineStore('innkeeperOidcStore', () => {
     authority: config.value.frontend.oidc.authority,
     client_id: config.value.frontend.oidc.client,
     redirect_uri: `${window.location.origin}/innkeeper`,
+    // client_secret:"vjZOVeSz90KuzwTwkHtwIakrjxJkVmOM",
     response_type: 'code',
     automaticSilentRenew: false, // don't need to renew for our needs at this point
     post_logout_redirect_uri: `${window.location.origin}/innkeeper`,

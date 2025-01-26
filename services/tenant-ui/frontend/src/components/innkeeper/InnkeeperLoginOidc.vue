@@ -1,7 +1,7 @@
 <template>
   <Button
     class="w-full mt-5"
-    label="IDIR"
+    label="Keylock"
     :loading="loading"
     @click="oidcLogin"
   />

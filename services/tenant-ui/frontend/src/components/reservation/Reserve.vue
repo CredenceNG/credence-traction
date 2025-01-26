@@ -8,34 +8,18 @@
     <div v-else>
       <!-- If auto-approve on, the confirmation will come right up -->
       <ShowWallet v-if="status === RESERVATION_STATUSES.SHOW_WALLET" />
-      <ReservationConfirmation
-        v-else
-        :id="reservationIdResult"
-        :email="formFields.contact_email"
-        :pwd="reservationPwdResult"
-      />
+      <ReservationConfirmation v-else :id="reservationIdResult" :email="formFields.contact_email"
+        :pwd="reservationPwdResult" />
     </div>
   </div>
 
   <!-- Submit Request -->
   <div v-else>
     <form @change="myChange">
-      <json-forms
-        :schema="formDataSchema"
-        :uischema="formUISchema"
-        :renderers="renderers"
-        :data="data"
-        :validation-mode="formValidationMode"
-        @change="onChange"
-      ></json-forms>
-      <Button
-        type="button"
-        class="w-full mt-5"
-        :label="$t('common.submit')"
-        :disabled="!!loading"
-        :loading="!!loading"
-        @click="handleSubmit(data)"
-      />
+      <json-forms :schema="formDataSchema" :uischema="formUISchema" :renderers="renderers" :data="data"
+        :validation-mode="formValidationMode" @change="onChange"></json-forms>
+      <Button type="button" class="w-full mt-5" :label="$t('common.submit')" :disabled="!!loading" :loading="!!loading"
+        @click="handleSubmit(data)" />
     </form>
   </div>
 </template>
@@ -323,6 +307,7 @@ const handleSubmit = async (event: any) => {
 <style scoped lang="scss">
 :deep(.control) {
   margin-bottom: 0.5rem;
+
   input,
   textarea {
     width: 100%;
@@ -333,30 +318,36 @@ const handleSubmit = async (event: any) => {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 1rem;
   }
+
   input:hover,
   input:focus,
   textarea:hover,
   textarea:focus {
     border-color: #2b3f51;
   }
+
   input:focus,
   textarea:focus {
     box-shadow: 0 0 0.3rem 0.1rem #87a6c1;
   }
+
   input:focus-visible,
   textarea:focus-visible {
     outline: none;
   }
+
   .error {
     font-weight: 200;
     color: red;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
   }
+
   input.highlight {
     border-color: red;
   }
 }
+
 :deep(.vertical-layout-item) {
   margin: 1.5rem 0 1rem 0;
 }

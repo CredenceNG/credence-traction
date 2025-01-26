@@ -1,12 +1,12 @@
 {
   "frontend": {
-    "tenantProxyPath": "http://localhost:8032",
+    "tenantProxyPath": "http://192.168.2.104:8032",
     "apiPath": "api/",
     "basePath": "/",
     "showDeveloper": true,
     "showInnkeeperReservationPassword": true,
     "showInnkeeperAdminLogin": true,
-    "showOIDCReservationLogin": false,
+    "showOIDCReservationLogin": true,
     "showWritableComponents": true,
     "quickConnectEndorserName": "",
     "requireEmailForReservation": true,
@@ -16,8 +16,8 @@
     },
     "oidc": {
       "active": true,
-      "authority": "https://manager.credence.ng/auth/realms/credence_realm",
-      "client": "credence_app",
+      "authority": "https://manager.credence.ng/realms/testrealm",
+      "client": "credence_web",
       "label": "Credence",
       "extraQueryParams": {}
     },
@@ -25,7 +25,7 @@
       "appTitle": "Credence Tenant Console",
       "appInnkeeperTitle": "Credence Innkeeper Console",
       "sidebarTitle": "Credence",
-      "copyright": "",
+      "copyright": "Credence (C) 2025",
       "owner": "",
       "coverImageCopyright": "Photo by Credence",
       "aboutBusiness": {
@@ -53,24 +53,24 @@
     "logLevel": "http",
     "port": "8080",
     "staticFiles": "../../frontend/dist",
-    "tractionUrl": "http://localhost:5100",
+    "tractionUrl": "http://192.168.2.100:8032",
     "oidc": {
-      "jwksUri": "https://dev.loginproxy.gov.bc.ca/auth/realms/digitaltrust-citz/protocol/openid-connect/certs",
-      "realm": "digitaltrust-citz",
-      "roleName": "innkeeper"
+      "jwksUri": "https://manager.credence.ng/realms/testrealm/protocol/openid-connect/certs",
+      "realm": "testrealm",
+      "roleName": "offline_access"
     },
     "innkeeper": {
       "user": "innkeeper",
       "key": "change-me"
     },
     "smtp": {
-      "server": "http://localhost:1080",
+      "server": "http://192.168.2.100",
       "port": 1025,
       "secure": false,
       "user": "",
       "password": "",
-      "senderAddress": "DoNotReplyTraction@gov.bc.ca",
-      "innkeeperInbox": "lucas.o'neil@gov.bc.ca"
+      "senderAddress": "DoNotReplyTraction@credence.com.ng",
+      "innkeeperInbox": "itopa@credence.com.ng"
     }
   }
 }
